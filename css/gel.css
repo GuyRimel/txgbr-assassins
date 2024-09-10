@@ -5,35 +5,61 @@
   /* ==========[ COLORS ]========== */
   /* Monochromatic */
   /* gray number = HSL lightness percentage (1% thru 99%) */
-  --gray-03: hsl(0, 0%, 09%);
-  --gray-06: hsl(0, 0%, 09%);
-  --gray-09: hsl(0, 0%, 09%);
-  --gray-12: hsl(0, 0%, 13%);
+  /* numbers are even or multiples of 5. Then, 91-99 */
+
+  --gray-02: hsl(0, 0%, 02%);
+  --gray-04: hsl(0, 0%, 04%);
+  --gray-05: hsl(0, 0%, 05%);
+  --gray-06: hsl(0, 0%, 06%);
+  --gray-08: hsl(0, 0%, 08%);
+  --gray-10: hsl(0, 0%, 10%);
+  --gray-12: hsl(0, 0%, 12%);
+  --gray-14: hsl(0, 0%, 14%);
   --gray-15: hsl(0, 0%, 15%);
+  --gray-16: hsl(0, 0%, 16%);
   --gray-18: hsl(0, 0%, 18%);
-  --gray-21: hsl(0, 0%, 21%);
+  --gray-20: hsl(0, 0%, 20%);
+  --gray-22: hsl(0, 0%, 22%);
   --gray-24: hsl(0, 0%, 24%);
-  --gray-27: hsl(0, 0%, 27%);
+  --gray-25: hsl(0, 0%, 25%);
+  --gray-26: hsl(0, 0%, 26%);
+  --gray-28: hsl(0, 0%, 28%);
   --gray-30: hsl(0, 0%, 30%);
-  --gray-33: hsl(0, 0%, 33%);
+  --gray-32: hsl(0, 0%, 32%);
+  --gray-34: hsl(0, 0%, 34%);
+  --gray-35: hsl(0, 0%, 35%);
   --gray-36: hsl(0, 0%, 36%);
-  --gray-39: hsl(0, 0%, 39%);
+  --gray-38: hsl(0, 0%, 38%);
+  --gray-40: hsl(0, 0%, 40%);
   --gray-42: hsl(0, 0%, 42%);
+  --gray-44: hsl(0, 0%, 44%);
   --gray-45: hsl(0, 0%, 45%);
+  --gray-46: hsl(0, 0%, 46%);
   --gray-48: hsl(0, 0%, 48%);
-  --gray-51: hsl(0, 0%, 51%);
+  --gray-50: hsl(0, 0%, 50%);
+  --gray-52: hsl(0, 0%, 52%);
   --gray-54: hsl(0, 0%, 54%);
-  --gray-57: hsl(0, 0%, 57%);
+  --gray-55: hsl(0, 0%, 55%);
+  --gray-56: hsl(0, 0%, 56%);
+  --gray-58: hsl(0, 0%, 58%);
   --gray-60: hsl(0, 0%, 60%);
-  --gray-63: hsl(0, 0%, 63%);
+  --gray-62: hsl(0, 0%, 62%);
+  --gray-64: hsl(0, 0%, 64%);
+  --gray-65: hsl(0, 0%, 65%);
   --gray-66: hsl(0, 0%, 66%);
-  --gray-69: hsl(0, 0%, 69%);
+  --gray-68: hsl(0, 0%, 68%);
+  --gray-70: hsl(0, 0%, 70%);
   --gray-72: hsl(0, 0%, 72%);
+  --gray-74: hsl(0, 0%, 74%);
   --gray-75: hsl(0, 0%, 75%);
+  --gray-76: hsl(0, 0%, 76%);
   --gray-78: hsl(0, 0%, 78%);
-  --gray-81: hsl(0, 0%, 81%);
+  --gray-80: hsl(0, 0%, 80%);
+  --gray-82: hsl(0, 0%, 82%);
   --gray-84: hsl(0, 0%, 84%);
-  --gray-87: hsl(0, 0%, 87%);
+  --gray-85: hsl(0, 0%, 85%);
+  --gray-86: hsl(0, 0%, 86%);
+  --gray-88: hsl(0, 0%, 88%);
   --gray-90: hsl(0, 0%, 90%);
   --gray-91: hsl(0, 0%, 91%);
   --gray-92: hsl(0, 0%, 92%);
@@ -60,7 +86,9 @@
   --theme-01: var(--gray-13);
   --theme-02: var(--gray-78);
   --theme-03: var(--red-01);
-  --bg-body: hsl(0, 0%, 99%);
+  --theme-highlight: white;
+  /* --bg-body: hsl(0, 0%, 99%); */
+  --bg-body: var(--gray-78);
   --rem-size: 16px;
   --h1-size: 2rem;
   --h6-size: 1.125rem;
@@ -289,6 +317,34 @@ i {
 }
 
 /* ==========[ CLASS COMPONENTS ]========== */
+.nav-bar {
+  margin: 0;
+}
+
+.nav-bar.dark {
+  background-color: var(--gray-15);
+  color: white;
+}
+
+.nav-bar>*>.nav-bar__tab {
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-bar>*>.nav-bar__tab.active {
+  background-color: var(--theme-highlight);
+  color: black;
+}
+
+.nav-bar>*>.nav-bar__tab:active {
+  background-color: var(--gray-90);
+  color: black;
+}
+
+.nav-bar>*>.nav-bar__tab:focus {
+  border: 1px solid var(--theme-highlight);
+}
+
 .banner-short,
 .banner,
 .banner-lg {
@@ -720,6 +776,8 @@ i {
 
 /* ==========[ DISPLAY ]========== */
 
+.d-none { display: none; }
+
 .d-flex {display: flex; }
 
 .d-flex-column {display: flex; flex-direction: column; }
@@ -763,7 +821,7 @@ i {
 .bg-green-01 { background-color: var(--green-1); }
 .bg-green-02 { background-color: var(--green-2); }
 .bg-gray-12 { background-color: var(--gray-12); }
-.bg-gray-50 { background-color: var(--gray-2); }
+.bg-gray-50 { background-color: var(--gray-50); }
 .bg-theme-01 { background-color: var(--theme-01); }
 .bg-theme-02 { background-color: var(--theme-02); }
 .bg-theme-03 { background-color: var(--theme-03); }
@@ -858,6 +916,20 @@ i {
 .text-small-caps { font-variant: small-caps; }
 
 .text-uppercase { text-transform: uppercase; }
+
+/* ==========[ BORDER ]========== */
+
+.border-black { border: 1px solid black; }
+
+.border-gray-50 { border: 1px solid var(--gray-50); }
+.border-gray-60 { border: 1px solid var(--gray-60); }
+.border-gray-70 { border: 1px solid var(--gray-70); }
+.border-gray-80 { border: 1px solid var(--gray-80); }
+.border-gray-90 { border: 1px solid var(--gray-90); }
+
+.border-white { border: 1px solid white; }
+
+.border-rad-01 {border-radius: .75rem;}
 
 /* ==========[ UTILITY ]========== */
 
