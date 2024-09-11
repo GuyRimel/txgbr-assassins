@@ -22,3 +22,13 @@ var callAPI = (base, exponent) => {
     .then((result) => alert(JSON.parse(result).body))
     .catch((error) => console.log("error", error));
 };
+
+function submitLogin(e) {
+  e.preventDefault();
+  window.location = '/index.html';
+}
+
+function navToNewUser(e) {
+  e.preventDefault();
+  window.location = '/new-user.html';
+}

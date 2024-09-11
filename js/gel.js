@@ -16,7 +16,10 @@ function showNavBarTabPage(e) {
 }
 
 function evaluateTabs() {
+  
   navBarTabs.forEach((tab, counter) => {
+    if(navBarTabPages[counter] === undefined) return;
+
     navBarTabPages[counter].classList.add("d-none");
     if (tab.classList.contains("active")) {
       navBarTabPages[counter].classList.remove("d-none");

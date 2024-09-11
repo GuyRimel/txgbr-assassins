@@ -323,12 +323,16 @@ i {
 
 .nav-bar.dark {
   background-color: var(--gray-15);
+}
+
+.nav-bar.dark * {
   color: white;
 }
 
 .nav-bar>*>.nav-bar__tab {
   cursor: pointer;
   user-select: none;
+  max-width: fit-content;  
 }
 
 .nav-bar>*>.nav-bar__tab.active {
@@ -336,7 +340,8 @@ i {
   color: black;
 }
 
-.nav-bar>*>.nav-bar__tab:active {
+.nav-bar>*>.nav-bar__tab:active,
+.nav-bar>*>.nav-bar__tab:hover {
   background-color: var(--gray-90);
   color: black;
 }
